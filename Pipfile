@@ -8,4 +8,7 @@ name = "pypi"
 [dev-packages]
 
 [requires]
-python_version = "3.13"
+python_version = "3.12"
+
+[scripts]  # ← Añade esta sección
+start = "python Adivina_el_número.py"

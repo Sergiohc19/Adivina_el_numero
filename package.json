@@ -1,0 +1,32 @@
+{
+  "name": "adivina_el_numero",
+  "version": "1.0.0",
+  "description": "\"Adivina el Número\" es un juego sencillo en el que el jugador debe adivinar un número generado aleatoriamente por la computadora dentro de un rango específico (1 al 100). El jugador tiene 7 intentos para adivinar el número correcto y, cada vez que falle, el juego proporcionará pistas.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sergiohc19/Adivina_el_numero.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Sergiohc19/Adivina_el_numero/issues"
+  },
+  "homepage": "https://github.com/Sergiohc19/Adivina_el_numero#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.0.12"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.0.12"
+  },
+  "plugins": {
+    "@tailwindcss/postcss": {}
+  }
+}

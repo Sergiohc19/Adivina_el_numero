@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Adivina el Número</title>
+</head>
+
+<body class="bg-black font-sans text-gray-900 flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-3xl p-9 bg-gray-800 rounded-lg shadow-lg">
+        <h1 class="text-3xl font-bold text-center text-blue-500 mb-4">{{ mensaje }}</h1>
+
+        {% if intentos %}
+        <h3 class="text-2xl font-bold text-white mb-5">Historial de intentos:</h3>
+        <ul class="space-y-2 mb-4">
+            {% for clave, valor in intentos.items() %}
+            <li class="text-xl  text-red-700">{{ clave }}: {{ valor }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        {% if pistas_avanzada %}
+        <p class="text-2xl text-yellow-600 mb-2"><strong>Pista avanzada:</strong> {{ pistas_avanzada }}</p>
+        {% endif %}
+
+        {% if pistas_matematica %}
+        <p class="text-2xl text-green-600 mb-4"><strong>Pista matemática:</strong> {{ pistas_matematica }}</p>
+        {% endif %}
+
+        {% if puntos is not none %}
+        <p class="text-3xl text-green-600 mb-4"><strong>Puntuación:</strong> {{ puntos }} puntos</p>
+        {% endif %}
+
+        <form method="POST" class="flex flex-col space-y-4">
+            <label for="intento" class="text-2xl font-medium text-white">Adivina el número secreto en el rango (1-100):</label>
+            <input type="text" id="intento" name="intento" required
+                class="p-5 border-25border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button type="submit"
+                class="w-full py-4 bg-blue-500 text-2xl text-white font-bold rounded-md hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 transition">
+                Adivinar
+            </button>
+        </form>
+
+        {% if juego_terminado %}
+        <form method="POST" action="/reiniciar" class="mt-4">
+            <button type="submit"
+                class="w-full py-4 bg-green-500 text-2xl text-white font-bold rounded-md hover:bg-green-600 focus:ring-2 focus:ring-green-500 transition">
+                Jugar otra vez
+            </button>
+        </form>
+        {% endif %}
+    </div>
+</body>
+
+</html>
